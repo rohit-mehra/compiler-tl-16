@@ -1,0 +1,82 @@
+digraph astgraph {
+  node [shape=box, style = filled, fillcolor="white", fontsize=10, fontname="Courier", height=.09];
+  ranksep=.3;
+  edge [arrowsize=.5]
+  node1 [label="<program>"]
+  node2 [label="<declarations>"]
+  node3 [label="N:int"]
+  node2 -> node3
+  node4 [label="TRIAL:int"]
+  node2 -> node4
+  node5 [label="M:int"]
+  node2 -> node5
+  node6 [label="RES:bool"]
+  node2 -> node6
+  node1 -> node2
+  node7 [label="<statements>"]
+  node8 [label=":=", fillcolor="white"]
+  node9 [label="N:int"]
+  node8 -> node9
+  node10 [label="readInt:int"]
+  node8 -> node10
+  node7 -> node8
+  node11 [label=":=", fillcolor="white"]
+  node12 [label="TRIAL:int"]
+  node11 -> node12
+  node13 [label="2:int"]
+  node11 -> node13
+  node7 -> node11
+  node14 [label=":=", fillcolor="white"]
+  node15 [label="RES:bool"]
+  node14 -> node15
+  node16 [label="true:bool"]
+  node14 -> node16
+  node7 -> node14
+  node17 [label="while"]
+  node18 [label="<:bool", fillcolor="white"]
+  node19 [label="TRIAL:int"]
+  node18 -> node19
+  node20 [label="N:int"]
+  node18 -> node20
+  node17 -> node18
+  node21 [label="<while_statements>"]
+  node22 [label=":=", fillcolor="white"]
+  node23 [label="M:int"]
+  node22 -> node23
+  node24 [label="mod:int", fillcolor="white"]
+  node25 [label="N:int"]
+  node24 -> node25
+  node26 [label="TRIAL:int"]
+  node24 -> node26
+  node22 -> node24
+  node21 -> node22
+  node27 [label="if"]
+  node28 [label="=:bool", fillcolor="white"]
+  node29 [label="M:int"]
+  node28 -> node29
+  node30 [label="0:int"]
+  node28 -> node30
+  node27 -> node28
+  node31 [label="<if_statements>"]
+  node32 [label=":=", fillcolor="white"]
+  node33 [label="RES:bool"]
+  node32 -> node33
+  node34 [label="false:bool"]
+  node32 -> node34
+  node31 -> node32
+  node27 -> node31
+  node21 -> node27
+  node35 [label=":=", fillcolor="white"]
+  node36 [label="TRIAL:int"]
+  node35 -> node36
+  node37 [label="+:int", fillcolor="white"]
+  node38 [label="TRIAL:int"]
+  node37 -> node38
+  node39 [label="1:int"]
+  node37 -> node39
+  node35 -> node37
+  node21 -> node35
+  node17 -> node21
+  node7 -> node17
+  node1 -> node7
+}

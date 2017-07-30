@@ -1,0 +1,97 @@
+digraph astgraph {
+  node [shape=box, style = filled, fillcolor="white", fontsize=10, fontname="Courier", height=.09];
+  ranksep=.3;
+  edge [arrowsize=.5]
+  node0 [label="ENTER"]
+  node0 -> node1
+  node1 [label="B1:
+li $t0, 0
+sw $t0, 0($fp)
+li $v0, 5
+syscall
+add $t0, $v0, $zero
+sw $t0, 0($fp)
+j B2
+"]
+  node1 -> node2
+  node2 [label="B2:
+lw $t1, 0($fp)
+li $t2, 0
+sw $t2, -8($fp)
+lw $t3, -8($fp)
+add $t2, $t3, $zero
+sgt $t0, $t1, $t2
+sw $t0, -4($fp)
+lw $t2, -4($fp)
+bne $t2, $zero, B3
+L4:
+j B4
+"]
+  node2 -> node3
+  node2 -> node4
+  node3 [label="B3:
+j B5
+"]
+  node3 -> node4
+  node3 -> node5
+  node4 [label=""]
+  node4 -> node5
+  node5 [label="B5:
+lw $t1, 0($fp)
+li $t2, 2
+sw $t2, -20($fp)
+lw $t3, -20($fp)
+add $t2, $t3, $zero
+rem $t0, $t1, $t2
+sw $t0, -16($fp)
+lw $t2, -16($fp)
+add $t1, $t2, $zero
+li $t3, 0
+sw $t3, -24($fp)
+lw $t4, -24($fp)
+add $t3, $t4, $zero
+seq $t0, $t1, $t3
+sw $t0, -12($fp)
+lw $t3, -12($fp)
+bne $t3, $zero, B6
+L7:
+j B7
+"]
+  node5 -> node6
+  node5 -> node7
+  node6 [label="B6:
+li $v0, 1
+li $t1, 1
+sw $t1, -28($fp)
+lw $t1, -28($fp)
+add $a0, $t1, $zero
+syscall
+li $v0, 4
+la $a0, newline
+syscall
+j B8
+"]
+  node6 -> node7
+  node6 -> node8
+  node7 [label="B7:
+li $v0, 1
+li $t1, 0
+sw $t1, -32($fp)
+lw $t1, -32($fp)
+add $a0, $t1, $zero
+syscall
+li $v0, 4
+la $a0, newline
+syscall
+"]
+  node7 -> node8
+  node8 [label="B8:
+
+B4:
+j B9
+"]
+  node8 -> node9
+  node9 [label="B9:
+li $v0, 10
+syscall"]
+}

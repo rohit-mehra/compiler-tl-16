@@ -1,0 +1,82 @@
+digraph astgraph {
+  node [shape=box, style = filled, fillcolor="white", fontsize=10, fontname="Courier", height=.09];
+  ranksep=.3;
+  edge [arrowsize=.5]
+  node1 [label="<program>"]
+  node2 [label="<declarations>"]
+  node3 [label="LAST:int"]
+  node2 -> node3
+  node4 [label="NEXTTOLAST:int"]
+  node2 -> node4
+  node5 [label="LIMIT:int"]
+  node2 -> node5
+  node6 [label="FIB:int"]
+  node2 -> node6
+  node1 -> node2
+  node7 [label="<statements>"]
+  node8 [label=":=", fillcolor="white"]
+  node9 [label="LIMIT:int"]
+  node8 -> node9
+  node10 [label="readInt:int"]
+  node8 -> node10
+  node7 -> node8
+  node11 [label=":=", fillcolor="white"]
+  node12 [label="LAST:int"]
+  node11 -> node12
+  node13 [label="1:int"]
+  node11 -> node13
+  node7 -> node11
+  node14 [label=":=", fillcolor="white"]
+  node15 [label="NEXTTOLAST:int"]
+  node14 -> node15
+  node16 [label="0:int"]
+  node14 -> node16
+  node7 -> node14
+  node17 [label=":=", fillcolor="white"]
+  node18 [label="FIB:int"]
+  node17 -> node18
+  node19 [label="1:int"]
+  node17 -> node19
+  node7 -> node17
+  node20 [label="writeInt:int"]
+  node21 [label="0:int"]
+  node20 -> node21
+  node7 -> node20
+  node22 [label="while"]
+  node23 [label="<=:bool", fillcolor="white"]
+  node24 [label="FIB:int"]
+  node23 -> node24
+  node25 [label="LIMIT:int"]
+  node23 -> node25
+  node22 -> node23
+  node26 [label="<while_statements>"]
+  node27 [label="writeInt:int"]
+  node28 [label="FIB:int"]
+  node27 -> node28
+  node26 -> node27
+  node29 [label=":=", fillcolor="white"]
+  node30 [label="FIB:int"]
+  node29 -> node30
+  node31 [label="+:int", fillcolor="white"]
+  node32 [label="LAST:int"]
+  node31 -> node32
+  node33 [label="NEXTTOLAST:int"]
+  node31 -> node33
+  node29 -> node31
+  node26 -> node29
+  node34 [label=":=", fillcolor="white"]
+  node35 [label="NEXTTOLAST:int"]
+  node34 -> node35
+  node36 [label="LAST:int"]
+  node34 -> node36
+  node26 -> node34
+  node37 [label=":=", fillcolor="white"]
+  node38 [label="LAST:int"]
+  node37 -> node38
+  node39 [label="FIB:int"]
+  node37 -> node39
+  node26 -> node37
+  node22 -> node26
+  node7 -> node22
+  node1 -> node7
+}
